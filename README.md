@@ -1,2 +1,2 @@
-# IBM_projects
-Data science projec and assignment from the IBM Data science course
+# IBM_tasks & notebook
+This is a collection of tasks and notebooks from the IBM Data science Professional program.
