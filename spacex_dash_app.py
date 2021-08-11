@@ -1,4 +1,5 @@
 # Import required libraries
+from logging import PlaceHolder
 import pandas as pd
 import dash
 import dash_html_components as html
@@ -20,7 +21,8 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
                                                'font-size': 40}),
                                 # TASK 1: Add a dropdown list to enable Launch Site selection
                                 # The default select value is for ALL sites
-                                # dcc.Dropdown(id='site-dropdown',...)
+                                dcc.Dropdown(id='site-dropdown',
+                                             options=('All Sites', 'CCAFS SLC 40', 'VAFB SLC 4E', 'CCAFS SLC 40'), value='All', PlaceHolder='Select a Launch Site here', searchable='True')
                                 html.Br(),
 
                                 # TASK 2: Add a pie chart to show the total successful launches count for all sites
@@ -30,10 +32,11 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
 
                                 html.P("Payload range (Kg):"),
                                 # TASK 3: Add a slider to select payload range
-                                #dcc.RangeSlider(id='payload-slider',...)
+                                # dcc.RangeSlider(id='payload-slider',...)
 
                                 # TASK 4: Add a scatter chart to show the correlation between payload and launch success
-                                html.Div(dcc.Graph(id='success-payload-scatter-chart')),
+                                html.Div(
+                                    dcc.Graph(id='success-payload-scatter-chart')),
                                 ])
 
 # TASK 2:
