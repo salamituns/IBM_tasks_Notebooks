@@ -173,6 +173,7 @@ app.layout = html.Div(children=[html.H1(
 def get_graph(chart, year, children1, children2, c3, c4, c5):
 
     # Select data
+    #z = ''.join(map(str, year_list))
     df = airline_data[airline_data['Year'] == int(year)]
 
     if chart == 'OPT1':
